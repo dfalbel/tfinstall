@@ -22,3 +22,4 @@ os:
   - linux
   - osx
 
+dist: xenial
