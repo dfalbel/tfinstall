@@ -12,6 +12,9 @@ install:
 script:
 - Rscript -e 'testthat::test_dir("tests/testthat/", reporter = c("progress", "fail"))'
 
+after_failure:
+- Rscript py_install_test.R
+
 env:
   - TENSORFLOW_VERSION="default" INSTALL_METHOD="conda"
 

@@ -14,3 +14,15 @@ install_anaconda_mac <- function() {
   system("chmod a+x ~/anaconda.sh")
   system("bash ~/anaconda.sh -b")
 }
+
+#' @export
+try_python_conda <- function() {
+  python <- reticulate::conda_python("r-tensorflow")
+  system(paste(python, "py_install_test.py"))
+}
+
+#' @export
+try_python_virtualenv <- function() {
+  python <- reticulate::virtualenv_python("r-tensorflow")
+  system(paste(python, "py_install_test.py"))
+}

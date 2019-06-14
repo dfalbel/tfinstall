@@ -3,4 +3,6 @@
 export(install_anaconda_linux)
 export(install_anaconda_mac)
 export(install_tensorflow)
+export(try_python_conda)
+export(try_python_virtualenv)
 importFrom(tensorflow,install_tensorflow)
