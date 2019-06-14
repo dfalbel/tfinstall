@@ -8,4 +8,4 @@ install:
 
 script:
 - R CMD build .
-- R -e "testthat::test_check()"
+- Rscript tests/testthat.R
