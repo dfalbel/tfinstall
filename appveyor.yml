@@ -28,14 +28,14 @@ platform: x64
 # Adapt as necessary starting from here
 
 build_script:
-  - R -e options(repos=c(CRAN='https://cran.rstudio.com')); install.packages('remotes')
-  - R -e options(repos=c(CRAN='https://cran.rstudio.com')); remotes::install_deps(dep = T)
-  - R -e remotes::install_local()
+  - R -e "options(repos=c(CRAN='https://cran.rstudio.com')); install.packages('remotes')"
+  - R -e "options(repos=c(CRAN='https://cran.rstudio.com')); remotes::install_deps(dep = T)"
+  - R -e "remotes::install_local()"
   - Rscript install.R
 
 
 test_script:
-  - Rscript -e testthat::test_dir('tests/testthat/', reporter = c('progress', 'fail'))
+  - Rscript -e "testthat::test_dir('tests/testthat/', reporter = c('progress', 'fail'))"
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
