@@ -1,0 +1,10 @@
+Package: tfinstall
+Type: Package
+Title: TensorFlow Installation Tests
+Version: 0.1.0
+Author: Daniel Falbel
+Maintainer: Daniel Falbel <daniel@rstudio.com>
+Description: Dummy package to set testing infrastructure to tensorflow installation functions.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
