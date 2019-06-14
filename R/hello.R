@@ -11,7 +11,8 @@ install_anaconda_linux <- function() {
 #' @export
 install_anaconda_mac <- function() {
   download.file(url = "https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.pkg", destfile = "~/anaconda.sh")
-  system("chmod a+x ~/anaconda.sh")
+  system("chmod +x ~/anaconda.sh")
+  cat("Installing conda: .... \n")
   system("bash ~/anaconda.sh -b")
 }
 
