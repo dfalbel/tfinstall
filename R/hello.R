@@ -17,6 +17,13 @@ install_anaconda_mac <- function() {
 }
 
 #' @export
+install_virtualenv_mac <- function() {
+  system("brew update")
+  system("brew install python") #python3
+  system("sudo pip3 install -U virtualenv")  # system-wide install
+}
+
+#' @export
 try_python_conda <- function() {
   python <- reticulate::conda_python("r-tensorflow")
   system(paste(python, "py_install_test.py"))

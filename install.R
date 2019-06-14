@@ -11,5 +11,9 @@ if (method=="conda") {
   }
 }
 
+if (method == "virtualenv" && grepl("darwin", R.Version()$os)) {
+  install_virtualenv_mac()
+}
+
 if (Sys.getenv("TRAVIS") == "true")
   install_tensorflow(version = version, method = method, restart_session = FALSE)
