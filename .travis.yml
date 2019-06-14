@@ -12,3 +12,7 @@ script:
 
 env:
   - TENSORFLOW_VERSION="default"
+
+os:
+  - linux
+  - osx
