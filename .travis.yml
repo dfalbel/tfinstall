@@ -13,7 +13,9 @@ script:
 
 env:
   - TENSORFLOW_VERSION="default"
+  - INSTALL_METHOD="conda"
 
 os:
   - linux
   - osx
+
