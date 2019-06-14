@@ -5,7 +5,7 @@ cache: packages
 
 install:
 - R -e 'remotes::install_deps(dep = T)'
+- R -e 'remotes::install_local()'
 
 script:
-- R CMD install .
 - Rscript tests/testthat.R
