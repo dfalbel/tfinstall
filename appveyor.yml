@@ -16,8 +16,12 @@ cache:
 environment:
   NOT_CRAN: true
   R_ARCH: x64
-  TENSORFLOW_VERSION: default
   INSTALL_METHOD: conda
+
+  matrix:
+    - TENSORFLOW_VERSION: default
+    - TENSORFLOW_VERSION: nightly
+    - TENSORFLOW_VERSION: 2.0.0-b0
   # env vars that may need to be set, at least temporarily, from time to time
   # see https://github.com/krlmlr/r-appveyor#readme for details
   # USE_RTOOLS: true
