@@ -9,3 +9,6 @@ install:
 
 script:
 - Rscript -e 'testthat::test_dir("tests/testthat/")'
+
+env:
+  - TENSORFLOW_VERSION="default"
