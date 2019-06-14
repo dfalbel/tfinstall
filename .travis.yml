@@ -16,7 +16,12 @@ after_failure:
 - Rscript py_install_test.R
 
 env:
-  - TENSORFLOW_VERSION="default" INSTALL_METHOD="conda"
+  - INSTALL_METHOD="conda" TENSORFLOW_VERSION="default"
+  - INSTALL_METHOD="conda" TENSORFLOW_VERSION="nightly"
+  - INSTALL_METHOD="conda" TENSORFLOW_VERSION="2.0.0-b0"
+  - INSTALL_METHOD="virtualenv" TENSORFLOW_VERSION="default"
+  - INSTALL_METHOD="virtualenv" TENSORFLOW_VERSION="nightly"
+  - INSTALL_METHOD="virtualenv" TENSORFLOW_VERSION="2.0.0-b0"
 
 os:
   - linux
