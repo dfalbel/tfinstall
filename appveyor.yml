@@ -28,11 +28,14 @@ platform: x64
 # Adapt as necessary starting from here
 
 build_script:
+  - R -e 'install.packages("remotes")'
+  - R -e 'remotes::install_deps(dep = T)'
+  - R -e 'remotes::install_local()'
   - Rscript install.R
-  - travis-tool.sh install_deps
+
 
 test_script:
-  - travis-tool.sh run_tests
+  - - Rscript -e 'testthat::test_dir("tests/testthat/", reporter = c("progress", "fail"))'
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
