@@ -7,7 +7,7 @@ install:
 - R -e 'install.packages("remotes")'
 - R -e 'remotes::install_deps(dep = T)'
 - R -e 'remotes::install_local()'
-- R -e "Rscript install.R"
+- Rscript install.R
 
 script:
 - Rscript -e 'testthat::test_dir("tests/testthat/")'
