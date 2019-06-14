@@ -28,8 +28,8 @@ platform: x64
 # Adapt as necessary starting from here
 
 build_script:
-  - R -e install.packages('remotes')
-  - R -e remotes::install_deps(dep = T)
+  - R -e options(repos=c(CRAN='https://cran.rstudio.com'); install.packages('remotes')
+  - R -e options(repos=c(CRAN='https://cran.rstudio.com'); remotes::install_deps(dep = T)
   - R -e remotes::install_local()
   - Rscript install.R
 
