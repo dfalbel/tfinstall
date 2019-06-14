@@ -7,5 +7,5 @@ install:
 - R -e 'remotes::install_deps(dep = T)'
 
 script:
-- R CMD build .
+- R CMD install .
 - Rscript tests/testthat.R
