@@ -8,4 +8,4 @@ install:
 - R -e 'remotes::install_local()'
 
 script:
-- Rscript tests/testthat.R
+- Rscript -e 'test_dir("tests/testthat/")'
