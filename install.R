@@ -15,5 +15,5 @@ if (method == "virtualenv" && grepl("darwin", R.Version()$os)) {
   install_virtualenv_mac()
 }
 
-if (Sys.getenv("TRAVIS") == "true")
+if (Sys.getenv("TRAVIS") == "true" || Sys.getenv("APPVEYOR") == "True")
   install_tensorflow(version = version, method = method, restart_session = FALSE)
