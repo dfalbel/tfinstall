@@ -14,4 +14,4 @@ Suggests:
 Imports: 
     tensorflow
 Remotes:
-    dfalbel/tensorflow@refactor/installation
+    rstudio/tensorflow
