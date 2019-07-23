@@ -26,8 +26,7 @@ install_virtualenv_mac <- function() {
 #' @export
 install_virtualenv_linux <- function() {
   system("sudo apt-get update")
-  system("sudo apt-get install --yes python3-pip")
-  system("python3 -m pip install --upgrade --user virtualenv")
+  system("sudo apt-get install --yes python3 python3-pip python3-venv")
 }
 
 #' @export
