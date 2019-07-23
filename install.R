@@ -13,6 +13,8 @@ if (method=="conda") {
 
 if (method == "virtualenv" && grepl("darwin", R.Version()$os)) {
   install_virtualenv_mac()
+} else if (method == "virtualenv" && R.Version()$os=="linux-gnu") {
+  install_virtualenv_linux()
 }
 
 if (Sys.getenv("TRAVIS") == "true" || Sys.getenv("APPVEYOR") == "True")
