@@ -4,7 +4,13 @@ version <- Sys.getenv("TENSORFLOW_VERSION")
 method <- Sys.getenv("INSTALL_METHOD")
 
 cat("Available config ---------------\n")
-print(reticulate::py_discover_config())
+
+if (grepl("darwin", R.Version()$os)) {
+  print(reticulate::py_discover_config())
+  print(system("which python"))
+  print(system("which pip"))
+}
+
 
 if (method=="conda") {
   if (R.Version()$os=="linux-gnu") {
