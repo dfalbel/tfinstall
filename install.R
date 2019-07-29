@@ -11,7 +11,6 @@ if (grepl("darwin", R.Version()$os)) {
   print(system("which pip"))
 }
 
-
 if (method=="conda") {
   if (R.Version()$os=="linux-gnu") {
     install_anaconda_linux()
@@ -27,7 +26,12 @@ if (method == "virtualenv" && grepl("darwin", R.Version()$os)) {
 }
 
 cat("After installations -----------------\n")
-print(reticulate::py_discover_config())
+
+if (grepl("darwin", R.Version()$os)) {
+  print(reticulate::py_discover_config())
+  print(system("which python"))
+  print(system("which pip"))
+}
 
 if (Sys.getenv("TRAVIS") == "true" || Sys.getenv("APPVEYOR") == "True")
   install_tensorflow(version = version, method = method, restart_session = FALSE)
