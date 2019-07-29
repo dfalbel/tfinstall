@@ -33,8 +33,12 @@ if (grepl("darwin", R.Version()$os)) {
   print(system("which pip"))
 }
 
-if (Sys.getenv("TRAVIS") == "true" || Sys.getenv("APPVEYOR") == "True")
-  install_tensorflow(version = version, method = method, restart_session = FALSE)
+print("Installing -------------")
 
+if (Sys.getenv("TRAVIS") == "true" || Sys.getenv("APPVEYOR") == "True") {
+  install_tensorflow(version = version, method = method, restart_session = FALSE)
+}
+
+print("Finished installing ------------------")
 
 
