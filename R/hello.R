@@ -18,9 +18,8 @@ install_anaconda_mac <- function() {
 
 #' @export
 install_virtualenv_mac <- function() {
-  system("brew update")
-  system("brew install python") #python3
-  system("sudo pip install -U virtualenv")  # system-wide install
+  system("pip install --upgrade pip")
+  system("pip install -U virtualenv")
 }
 
 #' @export
