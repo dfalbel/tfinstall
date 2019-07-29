@@ -19,3 +19,7 @@ if (method == "virtualenv" && grepl("darwin", R.Version()$os)) {
 
 if (Sys.getenv("TRAVIS") == "true" || Sys.getenv("APPVEYOR") == "True")
   install_tensorflow(version = version, method = method, restart_session = FALSE)
+
+print(reticulate::py_discover_config())
+print(tensorflow::tf_config())
+
