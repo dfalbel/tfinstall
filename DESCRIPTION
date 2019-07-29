@@ -15,4 +15,4 @@ Imports:
     tensorflow
 Remotes:
     rstudio/tensorflow,
-    rstudio/reticulate#557
+    rstudio/reticulate
