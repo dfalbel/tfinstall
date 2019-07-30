@@ -15,4 +15,4 @@ Imports:
     tensorflow
 Remotes:
     rstudio/tensorflow,
-    dfalbel/reticulate@575a341
+    dfalbel/reticulate@print
