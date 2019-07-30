@@ -39,9 +39,8 @@ print("Installing -------------")
 if (Sys.getenv("TRAVIS") == "true") {
   install_tensorflow(version = version, method = method, restart_session = FALSE)
 } else if (Sys.getenv("APPVEYOR") == "True") {
-  print(list.files("C:\\Miniconda36-x64\\Scripts\\"))
   install_tensorflow(version = version, method = method, restart_session = FALSE,
-                     conda = "C:\\Miniconda36-x64\\Scripts\\conda.bat")
+                     conda = "C:\\Miniconda36-x64\\Scripts\\conda.exe")
 }
 
 print("Finished installing ------------------")
