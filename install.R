@@ -3,14 +3,6 @@ library(tfinstall)
 version <- Sys.getenv("TENSORFLOW_VERSION")
 method <- Sys.getenv("INSTALL_METHOD")
 
-cat("Available config ---------------\n")
-
-if (grepl("darwin", R.Version()$os)) {
-  print(reticulate::py_discover_config())
-  print(system("which python"))
-  print(system("which pip"))
-}
-
 if (method=="conda") {
   if (R.Version()$os=="linux-gnu") {
     install_anaconda_linux()
@@ -25,22 +17,16 @@ if (method == "virtualenv" && grepl("darwin", R.Version()$os)) {
   install_virtualenv_linux()
 }
 
-cat("After installations -----------------\n")
-
 if (grepl("darwin", R.Version()$os)) {
   Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
+  Sys.setenv(PIP_USER="y")
 }
 
-print("Installing -------------")
-
-
-if (Sys.getenv("TRAVIS") == "true") {
+if (Sys.getenv("TRAVIS") == "true" && R.Version()$os=="linux-gnu") {
   install_tensorflow(version = version, method = method, restart_session = FALSE)
 } else if (Sys.getenv("APPVEYOR") == "True") {
   install_tensorflow(version = version, method = method, restart_session = FALSE,
                      conda = "C:\\Miniconda36-x64\\Scripts\\conda.exe")
 }
-
-print("Finished installing ------------------")
 
 
