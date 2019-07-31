@@ -14,4 +14,4 @@ Suggests:
 Imports: 
     tensorflow
 Remotes:
-    rstudio/tensorflow,
+    rstudio/tensorflow
