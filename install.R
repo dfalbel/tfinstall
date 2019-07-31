@@ -22,7 +22,7 @@ if (grepl("darwin", R.Version()$os)) {
   Sys.setenv(PIP_USER="y")
 }
 
-if (Sys.getenv("TRAVIS") == "true" && R.Version()$os=="linux-gnu") {
+if (Sys.getenv("TRAVIS") == "true") {
   install_tensorflow(version = version, method = method, restart_session = FALSE)
 } else if (Sys.getenv("APPVEYOR") == "True") {
   install_tensorflow(version = version, method = method, restart_session = FALSE,
