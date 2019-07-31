@@ -18,8 +18,8 @@ install_anaconda_mac <- function() {
 
 #' @export
 install_virtualenv_mac <- function() {
-  system("brew update")
-  system("brew install python3")
+  #system("brew update")
+  #system("brew install python3")
 }
 
 #' @export
