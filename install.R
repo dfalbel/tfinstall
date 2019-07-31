@@ -28,9 +28,7 @@ if (method == "virtualenv" && grepl("darwin", R.Version()$os)) {
 cat("After installations -----------------\n")
 
 if (grepl("darwin", R.Version()$os)) {
-  print(reticulate::py_discover_config())
-  print(system("which python"))
-  print(system("which pip"))
+  Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 }
 
 print("Installing -------------")
