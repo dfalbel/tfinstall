@@ -14,4 +14,4 @@ Suggests:
 Imports: 
     tensorflow
 Remotes:
-    rstudio/tensorflow
+    dfalbel/tensorflow@add-keras-required-packages
