@@ -54,7 +54,7 @@ matrix:
   - os: osx
     env: INSTALL_METHOD="virtualenv" TENSORFLOW_VERSION="2.0.0-b0"
   - os: osx
-    env: INSTALL_METHOD="virtualenv" TENSORFLOW_VERSION="https://files.pythonhosted.org/packages/89/33/8617196404b6bbdd7d8a4c4fad0a2b28c81cfdb63786ce70800778d8e72d/tensorflow-1.13.1-cp36-cp36m-macosx_10_11_x86_64.whl"
+    env: INSTALL_METHOD="virtualenv" TENSORFLOW_VERSION="https://files.pythonhosted.org/packages/f6/7b/5ab19bac13810661ff9e2485811553f1dea9a5d611ce846345aed4766bbe/tensorflow-1.13.1-cp36-cp36m-macosx_10_11_x86_64.whl"
   - os: osx
     env: INSTALL_METHOD="conda" TENSORFLOW_VERSION="https://files.pythonhosted.org/packages/f6/7b/5ab19bac13810661ff9e2485811553f1dea9a5d611ce846345aed4766bbe/tensorflow-1.13.1-cp36-cp36m-macosx_10_11_x86_64.whl"
 
