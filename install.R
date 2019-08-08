@@ -29,7 +29,34 @@ if (Sys.getenv("TRAVIS") == "true") {
   registry_versions <- reticulate:::py_versions_windows()
   anaconda_registry_versions <- subset(registry_versions,
                                        registry_versions$type == "Anaconda")
+  print(registry_versions)
+  print(anaconda_registry_versions)
   print(anaconda_registry_versions$install_path)
+
+  conda <- reticulate::conda_binary(file.path(anaconda_registry_versions$install_path, "Scripts", "conda.exe"))
+  conda_envs <- suppressWarnings(system2(conda, args = c("info",
+                                                         "--json"), stdout = TRUE, stderr = FALSE))
+  status <- attr(conda_envs, "status")
+  if (!is.null(status)) {
+    if (getOption("reticulate.conda_diagnostics", default = FALSE)) {
+      errmsg <- attr(status, "errmsg")
+      warning("Error ", status, " occurred running ", conda,
+              " ", errmsg)
+    }
+    return(data.frame(name = character(), python = character(),
+                      stringsAsFactors = FALSE))
+  }
+  if (length(conda_envs) > 0 && grepl("Anaconda Cloud", conda_envs[[1]],
+                                      fixed = TRUE))
+
+  conda_envs <- conda_envs[-1]
+  print(conda_envs)
+  conda_envs <- jsonlite::fromJSON(conda_envs)$envs
+  print(conda_envs)
+  conda_envs <- Filter(file.exists, conda_envs)
+  print(conda_envs)
+
+
   print(reticulate:::python_environment_versions())
 
   install_tensorflow(version = version, method = method, restart_session = FALSE)
