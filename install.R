@@ -33,7 +33,7 @@ if (Sys.getenv("TRAVIS") == "true") {
   print(anaconda_registry_versions)
   print(anaconda_registry_versions$install_path)
 
-  conda <- reticulate::conda_binary(file.path(anaconda_registry_versions$install_path, "Scripts", "conda.exe"))
+  conda <- reticulate::conda_binary(file.path(anaconda_registry_versions$install_path[1], "Scripts", "conda.exe"))
   conda_envs <- suppressWarnings(system2(conda, args = c("info",
                                                          "--json"), stdout = TRUE, stderr = FALSE))
   status <- attr(conda_envs, "status")
