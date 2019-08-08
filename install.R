@@ -26,6 +26,10 @@ if (Sys.getenv("TRAVIS") == "true") {
   install_tensorflow(version = version, method = method, restart_session = FALSE)
 } else if (Sys.getenv("APPVEYOR") == "True") {
 
+  registry_versions <- reticulate:::py_versions_windows()
+  anaconda_registry_versions <- subset(registry_versions,
+                                       registry_versions$type == "Anaconda")
+  print(anaconda_registry_versions$install_path)
   print(reticulate:::python_environment_versions())
 
   install_tensorflow(version = version, method = method, restart_session = FALSE)
